@@ -12,6 +12,7 @@ class Meetup(models.Model):
     description = models.TextField()
     meetup_time = models.DateTimeField()
     meetup_place = models.CharField(max_length = 300)
+    active = models.BooleanField(default = True)
 
     def get_absolute_url(self):
         return reverse('core:meetup_detail', args = [self.id])
