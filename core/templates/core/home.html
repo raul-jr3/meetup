@@ -5,5 +5,17 @@
 {% endblock %}
 
 {% block content %}
-  <h3>Hello world</h3>
+  <div class="row text-center">
+      <h2>Meetup</h2>
+  </div>
+  <div class="row center">
+    <div class="col-md-8">
+      {% for meetup in meetups %}
+        <h3>{{ meetup.meetup_name }}</h3>
+        <h4>Hosted by : {{ meetup.created_by }}</h4>
+        <b>Meetup date : {{ meetup.meetup_time }}</b>
+        <p>{{ meetup.description|linebreaks|truncatewords:15 }}</p><hr/>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}
