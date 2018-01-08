@@ -14,7 +14,9 @@
         <h3>{{ meetup.meetup_name }}</h3>
         <h4>Hosted by : {{ meetup.created_by }}</h4>
         <b>Meetup date : {{ meetup.meetup_time }}</b>
-        <p>{{ meetup.description|linebreaks|truncatewords:15 }}</p><hr/>
+        <p>{{ meetup.description|linebreaks|truncatewords:15 }}</p>
+        <a href="{{ meetup.get_absolute_url }}">click to know more...</a>
+        <hr/>
       {% endfor %}
     </div>
   </div>
