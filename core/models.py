@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.urls import reverse 
+from django.urls import reverse
 
 # Create your models here.
 class Meetup(models.Model):
@@ -11,7 +11,7 @@ class Meetup(models.Model):
     attendees = models.ForeignKey(User, related_name = "attending", on_delete = models.CASCADE, blank = True, null = True)
     not_sure = models.ForeignKey(User, related_name = "not_sure", on_delete = models.CASCADE, blank = True, null = True)
     description = models.TextField()
-    meetup_time = models.DateTimeField()
+    meetup_time = models.DateTimeField(help_text = "mm/dd/yyyy format")
     meetup_place = models.CharField(max_length = 300)
     active = models.BooleanField(default = True)
 

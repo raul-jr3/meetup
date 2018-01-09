@@ -10,6 +10,7 @@
   <div class="row">
     <div class="col-md-2"><b>{{ meetup.meetup_time }}</b></div>
     <div class="col-md-6"><h1>{{ meetup.meetup_name }}</h1>
+      (<a href="{% url "core:edit_meetup" meetup.id %}">edit</a>)
       <!--TODO: add markdown-->
       <img src="{{ meetup.meetup_image.url }}" class="img-responsive img-rounded"/>
       <h3>{{ meetup.description|linebreaks }}</h3>

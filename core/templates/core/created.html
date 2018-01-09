@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Success
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h3>Your meetup has been successfully created.</h3>
+      <h4>Click <a href="{% url "core:home" %}">here</a> to check it out.</h4>
+    </div>
+  </div>
+{% endblock %}
